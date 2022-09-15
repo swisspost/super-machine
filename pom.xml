@@ -50,14 +50,9 @@
     </licenses>
     <distributionManagement>
         <repository>
-            <id>artifactory-releases</id>
-            <name>artifactory.pnet.ch-releases</name>
-            <url>http://artifactory.pnet.ch/artifactory/libs-release-local</url>
+            <id>ossrh</id>
+            <name>Central Repository OSSRH</name>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
-        <snapshotRepository>
-            <id>artifactory-snapshots</id>
-            <name>artifactory.pnet.ch-snapshots</name>
-            <url>http://artifactory.pnet.ch/artifactory/libs-snapshot-local</url>
-        </snapshotRepository>
     </distributionManagement>
 </project>
