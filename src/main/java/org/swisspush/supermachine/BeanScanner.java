@@ -1,6 +1,6 @@
-package li.chee.supermachine;
+package org.swisspush.supermachine;
 
-import li.chee.supermachine.traverser.Traverser;
+import org.swisspush.supermachine.traverser.Traverser;
 
 import java.util.LinkedList;
 import java.util.stream.Stream;

@@ -1,4 +1,4 @@
-package li.chee.supermachine;
+package org.swisspush.supermachine;
 
 import lombok.Builder;
 import lombok.Data;
@@ -9,7 +9,6 @@ import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-import static li.chee.supermachine.BeanScanner.from;
 import static org.junit.Assert.assertArrayEquals;
 
 public class ScannerTest {
@@ -38,7 +37,7 @@ public class ScannerTest {
                         new BinaryTree("right-left", null, null, null),
                         new BinaryTree("right-right", null, null, null), null), null);
         String[] result =
-                from(tree).find(String.class).stream().toArray(String[]::new);
+                BeanScanner.from(tree).find(String.class).stream().toArray(String[]::new);
 
         assertArrayEquals(new String[]{"root", "left", "right",
                         "left-left", "left-right",
@@ -122,11 +121,11 @@ public class ScannerTest {
                         .build());
 
         String[] names =
-                from(company)
+                BeanScanner.from(company)
                         .find(Department.class)
                         .filter(d -> !d.getBoss().getName().equals("Bill"))
                         .find(Person.class)
-                        .filter(p -> from(p).find(City.class).extract(City::getMayor).stream().anyMatch(m -> m.getName().equals("Rudi")))
+                        .filter(p -> BeanScanner.from(p).find(City.class).extract(City::getMayor).stream().anyMatch(m -> m.getName().equals("Rudi")))
                         .then(e -> e.extract(Person::getName),
                                 e -> e.extract(p -> p.getAddresses()[0]).extract(Address::getStreet))
                         .stream()

@@ -1,4 +1,4 @@
-package li.chee.supermachine;
+package org.swisspush.supermachine;
 
 import java.util.stream.Stream;
 

@@ -1,4 +1,4 @@
-package li.chee.supermachine.traverser;
+package org.swisspush.supermachine.traverser;
 
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;
